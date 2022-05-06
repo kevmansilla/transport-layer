@@ -43,7 +43,8 @@ void Generator::finish() {
 void Generator::handleMessage(cMessage *msg) {
 
     // create new packet
-    cMessage *pkt = new cMessage("packet");
+    cPacket *pkt = new cPacket("packet");
+    pkt->setByteLength(par("packetByteSize"));
     // send to the output
     send(pkt, "out");
 
@@ -52,5 +53,6 @@ void Generator::handleMessage(cMessage *msg) {
     // schedule the new packet generation
     scheduleAt(departureTime, sendMsgEvent);
 }
+
 
 #endif /* GENERATOR */
