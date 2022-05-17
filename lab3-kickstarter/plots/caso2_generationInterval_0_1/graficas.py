@@ -50,15 +50,15 @@ ax1 = plt.subplot(212)
 plt.suptitle("Caso 2 (generationInterval = 0.1): Ocupacion de buffers en el sistema")
 
 ax1.plot(time_gen, buffer_gen, color='gray')
-ax1.set_title('Tx')
+ax1.set_title('NodeTx')
 
 ax2 = plt.subplot(221)
 ax2.plot(time_queue, buffer_queue, color='blue')
-ax2.set_title('Nx')
+ax2.set_title('Queue')
 
 ax3 = plt.subplot(222)
 ax3.plot(time_sink, buffer_sink, color='green')
-ax3.set_title('Rx')
+ax3.set_title('NodeRx')
 
 ax1.set_xlabel('tiempo de simulacion')
 ax2.set_ylabel('Cantidad de paquetes en el buffer')
@@ -83,6 +83,6 @@ plt.suptitle("Caso 2 (generationInterval = 0.1): Paquetes enviados y recibidos")
 sns.barplot(
     x=['Enviados', 'Recibidos'],
     y=[len(packets_gen), len(packets_sink)])
-print(len(packets_gen))
-print(len(packets_sink))
+print(len(packets_gen)) #1979
+print(len(packets_sink)) #999
 plt.show()
