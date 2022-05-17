@@ -41,14 +41,16 @@ buffer_gen = list(map(float, buffer_gen[0].split()))
 buffer_queue = list(map(float, buffer_queue[0].split()))
 buffer_sink = list(map(float, buffer_sink[0].split()))
 
-# print(time_gen)
+print(max(buffer_gen))
 
 # Graficando
 # Dibuja el sistema de coordenadas (subgrafo) de la fila 0 y la columna 1, ir significa círculo verde, punto verde
 
 ax1 = plt.subplot(212)
 plt.suptitle("Caso 1 (generationInterval = 1): Ocupacion de buffers en el sistema")
+ax1.plot(156.5, 2, marker="o", color="gray", label='(156,2)')
 ax1.plot(time_gen, buffer_gen, color='gray')
+plt.legend()
 ax1.set_title('NodeTx')
 
 ax2 = plt.subplot(221)
@@ -58,11 +60,13 @@ ax2.set_title('Queue')
 ax3 = plt.subplot(222)
 ax3.plot(time_sink, buffer_sink, color='green')
 ax3.set_title('NodeRx')
+plt.grid()
 
 ax1.set_xlabel('tiempo de simulacion')
 ax2.set_ylabel('Cantidad de paquetes en el buffer')
 plt.grid()
 plt.show()
+
 
 #Agregue en el modelo un contador de paquetes generados y paquetes consumidos
 #sacando la info

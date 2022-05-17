@@ -36,12 +36,11 @@ Para el caso 2 tenemos que el cuello de botella estará en Queue ya que ocurre l
 
 ### Caso 1 con generationIntercal de 0.1
 
-En el siguiente gráfico se presentan la ocupación de los bufferes en el sistema, se puede observar que tal como predice la teória se produce un cuello de botella en NodeRx aproximadamente a los 50 segundos de la simulación. A su vez los paquetes encolados (Queue) se comportan de forma constante, siempre igual a 1.
+En el siguiente gráfico se presentan la ocupación de los bufferes en el sistema, se puede observar que tal como predice la teoría se produce un cuello de botella en NodeRx a los 42 segundos de la simulación. A su vez, los paquetes encolados (Queue) se comportan de forma constante, siempre igual a 1.
 
-Por otra parte NodeTx presenta una tendencia muy variable, pero con un máximo muy marcado, al rededor del segundo 80 y con más de 30 paquetes encolados simúltaneamente.
+Por otra parte, NodeTx presenta una tendencia muy variable, pero con un máximo muy marcado, en los 82 segundos y con 33 paquetes encolados simultáneamente.
 
 ![caso1_inter_0.1](lab3-kickstarter/plots/caso1_generationInterval_0_1/Figure_1.png)
-
 
 Por último, podemos ver la cantidad de paquetes enviados (1979) y recibidos (1199) en tiempo de simúlación, con un intervalo de generación de paquetes de 0.1 se dropearon 780 paquetes, causados por la saturación de NodeRx.
 
@@ -49,7 +48,7 @@ Por último, podemos ver la cantidad de paquetes enviados (1979) y recibidos (11
 
 ### Caso 2 con generationIntercal de 0.1
 
-Para el caso 2, podemos observar que también se cumple la tesis inicial que pensabamos. En este caso el cuello de botella se encuentra en Queue en un tiempo de simulación inferior a 50 segundos. Ahora NodeRx se comporta de forma constante, encolando de a un paquete. Y NodeTx presenta una tendencia muy variada con un máximo de paquetes encolados simúltaneamente superior a 30 en 80 segundos de simulación.
+Para el caso 2, podemos observar que también se cumple la tesis inicial que pensábamos. En este caso, el cuello de botella se encuentra en Queue en un tiempo de simulación de 42 segundos. Ahora NodeRx se comporta de forma constante, encolando de a un paquete. Y NodeTx presenta una tendencia muy variada, con un máximo de paquetes encolados simultáneamente superior a 30 en 83 segundos de simulación.
 
 ![caso2_inter_0.1](lab3-kickstarter/plots/caso2_generationInterval_0_1/Figure_1.png)
 
@@ -61,7 +60,7 @@ Cabe resaltar que el comportamiento de los casos 1 y 2 con un intervalo de gener
 
 ### Caso 1 con generationIntercal de 1
 
-El siguiente gráfico esboza el caso 1 con un intervalo de generación de paquetes centrado en 1, se puede ver que no hay cuellos de botellas en ninguno de los módulos. Y presentan un comportamiento constante, excepto por NodeTx que en un instante de tiempo de simulación (aprox 155) presenta un salto muy marcado donde se encolan 2 paquetes a la vez.
+El siguiente gráfico esboza el caso 1 con un intervalo de generación de paquetes centrado en 1, se puede ver que no hay cuellos de botellas en ninguno de los módulos. Y presentan un comportamiento constante, excepto por NodeTx que en un instante de tiempo de simulación (156) presenta un salto muy marcado donde se encolan 2 paquetes a la vez.
 
 ![caso1_inter_1](lab3-kickstarter/plots/caso1_generationInterval_1/Figure_1.png)
 
