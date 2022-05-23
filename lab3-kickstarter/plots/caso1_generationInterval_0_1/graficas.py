@@ -17,13 +17,13 @@ print(data)
 print(data.columns)
 
 #Omnet guarda los valores de nuestro "vector" (lista de valores) en una celda, por lo que tengo que esxtraer estos valores
-time_gen = data['vectime'].loc[[24]].tolist()
+time_gen = data['vectime'].loc[[24]].tolist() #Network.nodeTx.queue
 buffer_gen = data['vecvalue'].loc[[24]].tolist()
 
-time_queue = data['vectime'].loc[[25]].tolist()
+time_queue = data['vectime'].loc[[25]].tolist() #Network.queue
 buffer_queue = data['vecvalue'].loc[[25]].tolist()
 
-time_sink = data['vectime'].loc[[26]].tolist()
+time_sink = data['vectime'].loc[[26]].tolist() #Network.nodeRx.queue
 buffer_sink = data['vecvalue'].loc[[26]].tolist()
 
 # print(time_gen)

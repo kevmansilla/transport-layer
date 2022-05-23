@@ -51,11 +51,11 @@ buffer_q2 = list(map(float, buffer_q2[0].split()))
 ax1 = plt.subplot(212)
 plt.suptitle("Caso 2 (generationInterval = 0.1): Ocupacion de buffers en el sistema")
 ax1.plot(time_trarx, buffer_trarx, color='gray')
-ax1.set_title('Rx')
+ax1.set_title('traRx')
 
 ax2 = plt.subplot(221)
 ax2.plot(time_tratx, buffer_tratx, color='blue')
-ax2.set_title('Tx')
+ax2.set_title('traTx')
 
 ax3 = plt.subplot(222)
 ax3.plot(time_sink, buffer_sink, color='green')
@@ -70,13 +70,13 @@ plt.show()
 ax1 = plt.subplot(121)
 plt.suptitle("Caso 2 (generationInterval = 0.1): Ocupacion de buffers en el sistema")
 ax1.plot(time_q1, buffer_q1, color='gray')
-ax1.set_title('Q1')
+ax1.set_title('Queue1')
 ax1.set_xlabel('tiempo de simulacion')
 ax1.set_ylabel('Cantidad de paquetes en el buffer')
 
 ax2 = plt.subplot(122)
 ax2.plot(time_q2, buffer_q2, color='blue')
-ax2.set_title('Q2')
+ax2.set_title('Queue2')
 ax2.set_xlabel('tiempo de simulacion')
 ax2.set_ylabel('Cantidad de paquetes en el buffer')
 
@@ -101,6 +101,6 @@ plt.suptitle("Caso 2 (generationInterval = 0.1): Paquetes enviados y recibidos")
 sns.barplot(
     x=['Enviados', 'Recibidos'],
     y=[len(packets_gen), len(packets_sink)])
-print(len(packets_gen)) #596
-print(len(packets_sink)) #410
+print(len(packets_gen)) #1979
+print(len(packets_sink)) #996
 plt.show()
