@@ -62,7 +62,7 @@ ax3.plot(time_sink, buffer_sink, color='green')
 ax3.set_title('NodeRx')
 plt.grid()
 
-ax1.set_xlabel('tiempo de simulacion')
+ax1.set_xlabel('tiempo de simulacion en segundos')
 ax2.set_ylabel('Cantidad de paquetes en el buffer')
 plt.grid()
 plt.show()
@@ -86,6 +86,9 @@ plt.suptitle("Caso 1 (generationInterval = 1): Paquetes enviados y recibidos")
 sns.barplot(
     x=['Enviados', 'Recibidos'],
     y=[len(packets_gen), len(packets_sink)])
-print(len(packets_gen))
-print(len(packets_sink))
+plt.text(1.25, 1.25, len(packets_sink), horizontalalignment='right',
+         verticalalignment='top', fontsize=15)
+plt.text(.25, .25, len(packets_gen), horizontalalignment='left',
+         verticalalignment='top', fontsize=15)
+plt.ylabel("Número de paquetes")
 plt.show()

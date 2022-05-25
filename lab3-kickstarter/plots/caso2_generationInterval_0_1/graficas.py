@@ -52,7 +52,7 @@ ax1.plot(time_gen, buffer_gen, color='gray')
 ax1.plot(83, 33, marker="o", color="gray", label='(83,32)')
 plt.legend()
 ax1.set_title('NodeTx')
-ax1.set_xlabel('tiempo de simulacion')
+ax1.set_xlabel('tiempo de simulacion en segundos')
 
 ax2 = plt.subplot(221)
 ax2.plot(time_queue, buffer_queue, color='blue')
@@ -87,6 +87,9 @@ plt.suptitle("Caso 2 (generationInterval = 0.1): Paquetes enviados y recibidos")
 sns.barplot(
     x=['Enviados', 'Recibidos'],
     y=[len(packets_gen), len(packets_sink)])
-print(len(packets_gen)) #1979
-print(len(packets_sink)) #999
+plt.text(1.25, 1.25, len(packets_sink), horizontalalignment='right',
+         verticalalignment='top', fontsize=15)
+plt.text(.25, .25, len(packets_gen), horizontalalignment='left',
+         verticalalignment='top', fontsize=15)
+plt.ylabel("Número de paquetes")
 plt.show()
