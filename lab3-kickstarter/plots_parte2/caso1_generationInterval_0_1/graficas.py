@@ -79,24 +79,21 @@ plt.grid()
 plt.show()
 
 ### 2
-ax1 = plt.subplot(212)
-plt.suptitle("Caso 1 (generationInterval = 0.1): Ocupacion de buffers en el sistema")
+ax1 = plt.subplot(121)
+plt.suptitle("Caso 2 (generationInterval = 0.1): Ocupacion de buffers en el sistema")
 ax1.plot(time_q1, buffer_q1, color='gray')
 ax1.set_title('Queue1')
+ax1.set_xlabel('tiempo de simulacion en segundos')
+ax1.set_ylabel('Cantidad de paquetes en el buffer')
 
-ax2 = plt.subplot(221)
+ax2 = plt.subplot(122)
 ax2.plot(time_q2, buffer_q2, color='blue')
 ax2.set_title('Queue2')
-
-ax3 = plt.subplot(222)
-ax3.plot(time_traRx2, buffer_traRx2, color='green')
-ax3.set_title('Rx')
-plt.grid()
-ax1.set_xlabel('tiempo de simulacion en segundos')
+ax2.set_xlabel('tiempo de simulacion en segundos')
 ax2.set_ylabel('Cantidad de paquetes en el buffer')
+
 plt.grid()
 plt.show()
-
 #Agregue en el modelo un contador de paquetes generados y paquetes consumidos
 #sacando la info
 time_gen = data['vectime'].loc[[21]].tolist()
