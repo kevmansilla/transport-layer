@@ -166,6 +166,33 @@ El algoritmo de control de flujo y congestión se comporta bien, debido a que re
 
 A su vez, para el caso 2 con un intervalo de generación de 0.1 también funciona correctamente. Esto de debe a que se regulo la tasa de transferencia y se notifica en caso de congestión en los modulos Queue y TransporTx, que eran justamente en los casos donde existian los cuellos de botella en la parte 1.
 
+## Carga útil vs carga ofrecida
+
+A modo de comparación en las siguientes figuras se presenta la carga útil y ofrecida para todos los casos y las respectivas partes que fueron desarrolladas en el transcurso del trabajo.
+
+Los puntos de esta curva se corresponden con diferentes tasas de transmisión de paquetes, de esta forma podemos ver como para diferentes configuraciones de carga ofrecida, cuál es la carga útil total que llega a destino. En otras palabras, vemos la cantidad de paquetes por segundo que se inyectan por el transmisor (nodeTx) y el total de paquetes por segundo que llegan al destino final.
+
+### Caso 1: parte 1 vs parte 2
+
+Si todo funcionará bien el comportamiento de esta curva tendría que ser lineal (una recta de 45 grados que sale del origen), es decir, se mantendría la proporción entre paquetes transmitidos y recibidos en el destino final por segundo.
+
+Gracias a lo mencionado en el párrafo anterior, en fácil identificar en el gráfico la tasa de tráfico a la cual el transmisor empieza a perder paquetes. Se puede ver un quiebre muy marcado cuando la carga ofrecida es mayor que 5 paquetes por segundo, la correspondencia línea con la carga útil ya no se verifica y por ende la curva se aplana. Esto sucede para las dos curvas presentadas, pero en la curva azul que se corresponde con el caso 1 de la parte 1 el *overhead* es mucho mayor.
+
+En el caso 1 parte 2, donde está implementado nuestro algoritmo el efecto en la pérdida de paquetes no es tan grande debido a que la curva no se aplana tanto, pero si tiene una leve caída o colapso por la congestión esto se debe a que el mecanismo de *feedbback* que usamos termina siendo mucho más caro cuando hay una alta tasa de transmisión y por ende se relentiza el sistema (los paquetes se pueden retrasar el tiempo suficiente dentro de la red como para que ya no sean útilies cuando salgan de ella).
+
+![1](lab3-kickstarter/carga_util_vs_ofrecida/Figure_1.png)
+
+### Caso 2: parte 1 vs parte 2
+
+En este caso se presenta un comportamiento similar al anterior, donde las curvas se comportan con una relación lineal hasta una tasa de 5 paquetes por segundo aproximadamente. Luego de esto ambas se aplanan produciendo una pérdida de paquetes.
+
+En el caso 2, parte 1 (línea azul) la pérdida de la relación lineal es mucho mayor que para el caso 2, parte 2 (línea verde) lo importante a resaltar en este caso es que la curva no presenta una leve caída como en el caso anterior sino que aumenta levemente, esto es muy bueno y nos dice que nuestro algoritmo funciona de la forma que esperábamos.
+
+![2](lab3-kickstarter/carga_util_vs_ofrecida/Figure_2.png)
+
+## Posibles extensiones
+
+Podemos decir que los resultados del trabajo cumplen con lo previsto, pues nuestro algoritmo logra una reducción en la pérdida de paquetes. Nos hubiera gustado implementar un algoritmo específico de control de congestión visto en el teórico como lo son Reno o Taloe y poder analizar su comportamiento en la práctica.
 ## Referencias
 
 [Evolución de los algoritmos de control de congestión en las distintas variantes del protocolo TCP](https://publicaciones.unpa.edu.ar/index.php/ICTUNPA/article/download/793/827/2730/)
