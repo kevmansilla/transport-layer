@@ -1,0 +1,27 @@
+version 2
+run General-0-20220523-18:57:53-4948
+attr configname General
+attr datetime 20220523-18:57:53
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 4948
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param Network.nodeTx.gen.generationInterval exponential(0.1)
+param Network.**.serviceTime exponential(0.001)
+param Network.nodeTx.gen.packetByteSize 12500
+param Network.queue1.bufferSize 200
+param Network.queue2.bufferSize 200
+param Network.nodeRx.traRx.bufferSize 200
+param Network.nodeTx.traTx.bufferSize 200
+
+scalar Network.nodeRx.sink "Avg delay" 33.028227414328
+scalar Network.nodeRx.sink "Number of packets" 996
+
